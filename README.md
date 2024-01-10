@@ -14,10 +14,10 @@ Create a new IAM user with programmatic access, which will be used by Terraform 
 ## Terraform installed: 
 You will need to have Terraform installed on your machine to write and execute Terraform code. You can download the appropriate version for your machine here: https://www.terraform.io/downloads.html. Extract the downloaded zip file to a directory on your machine and add the directory containing the Terraform binary to your system’s PATH environment variable.
 
-## AWS CLI installed 
+## AWS CLI installed:
 You must have the AWS Command Line Interface (CLI) installed on your machine to interact with EC2 instances and other AWS resources from the command line. You can download the appropriate version for your system here: https://aws.amazon.com/cli/
 
-## IAM User connection: 
+## AWS CLI Configuration: 
 Once you have installed the AWS CLI, you can configure it by running the following command:
 ```
 aws configure
@@ -26,7 +26,7 @@ This will prompt you to enter your AWS access key ID, secret access key, default
 
 If you have not already done so, you should create an IAM user with the minimum required permissions necessary.
 
-## EC2 Instance SSH pAccess
+## EC2 Instance SSH:
 SSH key pair: To access a Linux-based EC2 instance via SSH, you will need an SSH key pair.
 Run the following command to generate a new SSH key pair:
 
@@ -41,7 +41,7 @@ The ssh-keygen command will generate two files: a private key file and a public 
 
 Finally, to use the key pair with an Amazon EC2 instance, you must add the public key to the instance when you configure it with Terraform.
 
-## Authentication with AWS
+## Authentication with AWS:
 You can configure Terraform to authenticate with AWS using several methods. With AWS CLI installed, we can use the named profiles method, which is a recommended approach for authenticating Terraform to AWS because it allows you to manage multiple sets of AWS credentials and control access to resources using IAM roles and policies.
 
 First, ensure the AWS CLI is installed and configured using the guidelines in the prerequisite section to add the AWS access key ID and secret access key using the aws configure command. By default, the AWS CLI-named profiles use the same access key ID and secret access key as your default profile, so you don’t need to specify them again for different profiles.
