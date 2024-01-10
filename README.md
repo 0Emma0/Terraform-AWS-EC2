@@ -22,11 +22,12 @@ Once you have installed the AWS CLI, you can configure it by running the followi
 ```
 aws configure
 ```
-This will prompt you to enter your AWS access key ID, secret access key, default region, and default output format. You can get your access key ID and secret access key from the AWS Management Console by navigating to the security credential section once logged in or creating a new one from there.
+This will prompt you to enter your AWS access key ID, secret access key, default region, and default output format. You can get your access key ID and secret access key from the AWS Management Console by navigating to IAM > Users.
 
 If you have not already done so, you should create an IAM user with the minimum required permissions necessary.
 
-SSH key pair: To access a Linux-based EC2 instance via SSH, you’ll need an SSH key pair.
+## EC2 Instance SSH pAccess
+SSH key pair: To access a Linux-based EC2 instance via SSH, you will need an SSH key pair.
 Run the following command to generate a new SSH key pair:
 
 ssh-keygen -t rsa -b 4096
@@ -40,7 +41,7 @@ The ssh-keygen command will generate two files: a private key file and a public 
 
 Finally, to use the key pair with an Amazon EC2 instance, you must add the public key to the instance when you configure it with Terraform.
 
-Authentication with AWS
+## Authentication with AWS
 You can configure Terraform to authenticate with AWS using several methods. With AWS CLI installed, we can use the named profiles method, which is a recommended approach for authenticating Terraform to AWS because it allows you to manage multiple sets of AWS credentials and control access to resources using IAM roles and policies.
 
 First, ensure the AWS CLI is installed and configured using the guidelines in the prerequisite section to add the AWS access key ID and secret access key using the aws configure command. By default, the AWS CLI-named profiles use the same access key ID and secret access key as your default profile, so you don’t need to specify them again for different profiles.
