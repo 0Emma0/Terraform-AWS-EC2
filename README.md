@@ -48,4 +48,4 @@ First, ensure the AWS CLI is installed and configured using the guidelines in th
 
 Create an AWS CLI named profile for Terraform in the ~/.aws/config file (Linux and macOS) or %UserProfile%\.aws\config file (Windows). You can override the default access key ID and secret access key for a named profile by setting the aws_access_key_id and aws_secret_access_key attributes if required.
 
-Although it is not necessary (and may cause problems if one of your team uses the code in a different SDK), you can add a new profile section with a unique profile name, such as jack.roper. The example below tells the AWS CLI to use the us-west-2 region for the jack.roper profile.
+Although it is not necessary (and may cause problems if one of your team uses the code in a different SDK), you can add a new profile section with a unique profile name, such as tf.profile. The example below tells the AWS CLI to use the us-west-2 region for tf.profile.
