@@ -1,23 +1,30 @@
-In this article, we will show how to create an EC2 instance on Amazon Web Services using Terraform.
+In this article, we will describe how to create an EC2 instance on Amazon Web Services using Terraform.
 
-*Prerequisites
-To create an EC2 instance on AWS with Terraform, we will need following prerequisites in place:
+# Prerequisites
+To create an EC2 instance on AWS with Terraform, we will need the following prerequisites in place:
 
-**AWS Account: 
-You must have an AWS account to create and manage resources on the AWS cloud. If you don’t already have this, you can sign up for an account and use the free tier here. For the first 12 months, you can run a free EC2 instance of the following specifications:
-750 hours per month of Linux, RHEL, or SLES t2.micro or t3.micro instance dependent on region
-750 hours per month of Windows t2.micro or t3.micro instance dependent on region
-If you continue to run your EC2 instance after the 12-month free tier allowance period is up you’ll start getting charged, so remember to clean up after the tutorial!
+## AWS Account: 
+The first prerequisite you need to have is an active AWS account where you will create the resources on AWS, if you don't have an AWS account yet, you can create one from here: https://aws.amazon.com/free
 
-**Terraform installed: 
-You’ll need to have Terraform installed on your machine to write and execute Terraform code. You can download the appropriate version for your machine here. Extract the downloaded zip file to a directory on your machine and add the directory containing the Terraform binary to your system’s PATH environment variable.
-AWS CLI installed & IAM User with permissions: You’ll need to have the AWS Command Line Interface (CLI) installed on your machine to interact with EC2 instances and other AWS resources from the command line. You can download the appropriate version for your system here. Once you have installed the AWS CLI, you can configure it by running the following command in a terminal window:
+## Create an IAM User on AWS:
+Create a new IAM user with programmatic access, which will be used by Terraform to create resources on AWS. You will use the key ID, secret access key, and default region in the next steps. Save all this information to be used on the "aws configure" command. 
+
+[How to create an IAM User ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html)
+
+## Terraform installed: 
+You will need to have Terraform installed on your machine to write and execute Terraform code. You can download the appropriate version for your machine here: https://www.terraform.io/downloads.html. Extract the downloaded zip file to a directory on your machine and add the directory containing the Terraform binary to your system’s PATH environment variable.
+
+## AWS CLI installed 
+You must have the AWS Command Line Interface (CLI) installed on your machine to interact with EC2 instances and other AWS resources from the command line. You can download the appropriate version for your system here: https://aws.amazon.com/cli/
+
+## IAM User connection: 
+Once you have installed the AWS CLI, you can configure it by running the following command:
+```
 aws configure
-This will prompt you to enter your AWS access key ID, secret access key, default region, and default output format. You can obtain your access key ID and secret access key from the AWS Management Console by navigating to the security credential section once logged in or create a new one from there if needed.
+```
+This will prompt you to enter your AWS access key ID, secret access key, default region, and default output format. You can get your access key ID and secret access key from the AWS Management Console by navigating to the security credential section once logged in or creating a new one from there.
 
 If you have not already done so, you should create an IAM user with the minimum required permissions necessary.
-
-Learn more about AWS IAM best practices.
 
 SSH key pair: To access a Linux-based EC2 instance via SSH, you’ll need an SSH key pair.
 Run the following command to generate a new SSH key pair:
