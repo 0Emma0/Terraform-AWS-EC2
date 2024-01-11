@@ -26,22 +26,6 @@ This will prompt you to enter your AWS access key ID, secret access key, default
 
 If you have not already done so, you should create an IAM user with the minimum required permissions necessary.
 
-## EC2 Instance SSH:
-SSH key pair: To access a Linux-based EC2 instance via SSH, you will need an SSH key pair.
-Run the following command to generate a new SSH key pair:
-```
-ssh-keygen -t rsa -b 4096
-```
-This will create a new RSA key pair with a length of 4096 bits.
-
-You will be prompted to enter a file name to save the key pair. The default location is in your user’s home directory under the .ssh directory. You can choose a different file name or directory if you prefer.
-
-You will be prompted to enter a passphrase for the key pair. This is optional but recommended to add an extra layer of security.
-
-The ssh-keygen command will generate two files: a private key file and a public key file. The private key file should be kept secure and never shared with anyone. The public key file can be shared with Amazon EC2 instances to allow SSH access.
-
-Finally, to use the key pair with an Amazon EC2 instance, you must add the public key to the instance when you configure it with Terraform.
-
 ## Authentication with AWS:
 To use your IAM credentials to authenticate the Terraform AWS provider, set the AWS_ACCESS_KEY_ID environment variable.
 ```
