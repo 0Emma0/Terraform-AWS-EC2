@@ -3,16 +3,16 @@ In this repo, we will describe how to create an EC2 instance on Amazon Web Servi
 # Prerequisites
 To create an EC2 instance on AWS with Terraform, we will need the following prerequisites in place:
 
+## Terraform installed: 
+You will need to have Terraform installed on your machine to write and execute Terraform code. If you don't have Terraform installed, you can visit the official site. https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli 
+
 ## AWS Account: 
-The first prerequisite you need to have is an active AWS account where you will create the resources on AWS, if you don't have an AWS account yet, you can create one from here: https://aws.amazon.com/free
+You will need an active AWS account where you will create the resources on AWS, if you don't have an AWS account yet, you can create one from here: https://aws.amazon.com/free
 
 ## Create an IAM User on AWS:
 Create a new IAM user with programmatic access, which will be used by Terraform to create resources on AWS. You will use the key ID, secret access key, and default region in the next steps. Save all this information to be used on the "aws configure" command. 
 
 [How to create an IAM User ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html)
-
-## Terraform installed: 
-You will need to have Terraform installed on your machine to write and execute Terraform code. If you don't have Terraform installed, you can visit the official site. https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli 
 
 ## AWS CLI installed:
 You must have the AWS Command Line Interface (CLI) installed on your machine to interact with EC2 instances and other AWS resources from the command line. You can download the appropriate version for your system here: https://aws.amazon.com/cli/
