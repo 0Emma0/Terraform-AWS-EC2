@@ -43,11 +43,17 @@ The ssh-keygen command will generate two files: a private key file and a public 
 Finally, to use the key pair with an Amazon EC2 instance, you must add the public key to the instance when you configure it with Terraform.
 
 ## Authentication with AWS:
-You can configure Terraform to authenticate with AWS using several methods. With AWS CLI installed, we can use the named profiles method, which is a recommended approach for authenticating Terraform to AWS because it allows you to manage multiple sets of AWS credentials and control access to resources using IAM roles and policies.
+To use your IAM credentials to authenticate the Terraform AWS provider, set the AWS_ACCESS_KEY_ID environment variable.
+```
+export AWS_ACCESS_KEY_ID=
+```
+Now, set your secret key.
+```
+export AWS_SECRET_ACCESS_KEY=
+```
+ 
 
-First, ensure the AWS CLI is installed and configured using the guidelines in the prerequisite section to add the AWS access key ID and secret access key using the aws configure command. By default, the AWS CLI-named profiles use the same access key ID and secret access key as your default profile, so you don’t need to specify them again for different profiles.
-
-Create an AWS CLI named profile for Terraform in the ~/.aws/config file (Linux and macOS) or %UserProfile%\.aws\config file (Windows). You can override the default access key ID and secret access key for a named profile by setting the aws_access_key_id and aws_secret_access_key attributes if required.
+If you don't have access to IAM user credentials, use another authentication method described in the AWS provider documentation.
 
 # How to create an EC2 instance using Terraform
 Once you have completed all prerequisites you can create the EC2 Instance with the next steps:
@@ -58,11 +64,15 @@ Once you have completed all prerequisites you can create the EC2 Instance with t
 ```
 terraform init
 ```
-3- Run terraform plan. Terraform will create an execution plan.
+3- You can also make sure your configuration is syntactically valid and internally consistent by using the terraform validate command.
+```
+terraform validate
+```
+4- Run terraform plan. Terraform will create an execution plan.
 ```
 terraform plan
 ```
-4- Run terraform apply and enter yes to confirm the execution. (This step will create the EC2 Instance on AWS)
+5- Run terraform apply and enter yes to confirm the execution. (This step will create the EC2 Instance on AWS)
 ```
 terraform apply
 ```
