@@ -12,7 +12,7 @@ Create a new IAM user with programmatic access, which will be used by Terraform 
 [How to create an IAM User ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html)
 
 ## Terraform installed: 
-You will need to have Terraform installed on your machine to write and execute Terraform code. You can download the appropriate version for your machine here: https://www.terraform.io/downloads.html. Extract the downloaded zip file to a directory on your machine and add the directory containing the Terraform binary to your system’s PATH environment variable.
+You will need to have Terraform installed on your machine to write and execute Terraform code. If you don't have Terraform installed, you can visit the official site. https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli 
 
 ## AWS CLI installed:
 You must have the AWS Command Line Interface (CLI) installed on your machine to interact with EC2 instances and other AWS resources from the command line. You can download the appropriate version for your system here: https://aws.amazon.com/cli/
